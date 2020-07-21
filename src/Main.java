@@ -7,27 +7,28 @@ public class Main {
         //state (which can be CanBeRented, CanNotBeRented, InService,
         // Discarded (aka so broken that the service won’t pay off)
 
-        Bike bike1 = new Bike("red", "CanBeRented");
-        Bike bike2 = new Bike("red", "CanBeRented");
-        Bike bike3 = new Bike("brown", "CanBeRented");
-        Bike bike4 = new Bike("green", "CanNotBeRented");
-        Bike bike5 = new Bike("blue", "InService");
-        Bike bike6 = new Bike("black", "Discarded");
-        Bike bike7 = new Bike("white", "CanNotBeRented");
-        Bike bike8 = new Bike("brown", "CanBeRented");
-        Bike bike9 = new Bike("black", "CanNotBeRented");
-        Bike bike10 = new Bike("", "noBikeRented");
+        Bike bike1 = new Bike("red", "CanBeRented", 0);
+        Bike bike2 = new Bike("red", "CanBeRented", 0);
+        Bike bike3 = new Bike("brown", "CanBeRented",0);
+        Bike bike4 = new Bike("green", "CanNotBeRented",0);
+        Bike bike5 = new Bike("blue", "InService",0);
+        Bike bike6 = new Bike("black", "Discarded",0);
+        Bike bike7 = new Bike("white", "CanNotBeRented",0 );
+        Bike bike8 = new Bike("brown", "CanBeRented",0);
+        Bike bike9 = new Bike("black", "CanNotBeRented",0);
+        Bike bike10 = new Bike("", "noBikeRented",0);
 
 
-
-        /*
-        testing IdCounter
+       // testing IdCounter
         bike1.print();
         bike2.print();
         bike3.print();
-         */
+
 
         HashMap <Integer, String> bikes = new HashMap <Integer, String>();
+
+
+
 
         bikes.put(bike1.bikeID,bike1.state);
         bikes.put(bike2.bikeID,bike2.state);
@@ -47,12 +48,19 @@ public class Main {
          */
 
 
-
-
         Station stat1 = new Station( 1 , "innere Stadt");
         Station stat2 = new Station( 2 , "Donaustadt");
         Station stat3 = new Station( 3 , "AKH");
 
+        stat1.addBike(bike1.getBikeID());
+        stat1.addBike(bike3.getBikeID());
+        stat1.addBike(bike2.getBikeID());
+
+        stat2.addBike(bike4.getBikeID());
+        stat2.addBike(bike9.getBikeID());
+        stat2.addBike(bike7.getBikeID());
+        stat2.addBike(bike8.getBikeID());
+        stat2.addBike(bike5.getBikeID());
 
 
         HashMap <Integer, String> stations = new HashMap <Integer, String>();
@@ -63,9 +71,6 @@ public class Main {
 
 
 
-
-
-
         /*
         HashMap testing
         System.out.println(stations.size());
@@ -73,12 +78,15 @@ public class Main {
          */
 
 
-        User user1 = new User(1, "alex", "alexej", bike10);
-        User user2 = new User(2, "blex", "huber", bike10);
-        User user3 = new User(3, "clex", "anton", bike10);
 
 
+        User user1 = new User(1, "alex", "alexej");
+        User user2 = new User(2, "blex", "huber");
+        User user3 = new User(3, "clex", "anton");
+        User user4 = new User(4, "dlex", "typ");
 
+
+        user1.rent(bike3.getBikeID(), stat2.getStationId(), bike1);
 
 
 
