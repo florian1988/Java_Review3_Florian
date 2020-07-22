@@ -47,7 +47,6 @@ public class Main {
          */
 
 
-
         Station stat1 = new Station( 1 , "innere Stadt");
         Station stat2 = new Station( 2 , "Donaustadt");
         Station stat3 = new Station( 3 , "AKH");
@@ -63,8 +62,6 @@ public class Main {
         stat2.addBike(bike5.getBikeID());
 
 
-
-
         HashMap <Integer, String> stations = new HashMap <Integer, String>();
 
         stations.put(stat1.stationId, stat1.location);
@@ -72,14 +69,11 @@ public class Main {
         stations.put(stat3.stationId, stat3.location);
 
 
-
         /*
         HashMap testing
         System.out.println(stations.size());
         System.out.println(stations.get(2));
          */
-
-
 
 
         User user1 = new User("alex", "alexej");

@@ -1,7 +1,4 @@
-
 import java.util.ArrayList;
-
-
 
 public class Station {
 
@@ -34,8 +31,6 @@ public class Station {
         }
 
     }
-
-
 
     public void userReturn(int bikeId , int userId){
         if (test1.contains(bikeId)) {
