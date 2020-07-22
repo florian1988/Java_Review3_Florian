@@ -1,13 +1,13 @@
 public class Bike {
 
 
-     int bikeID;
-    private static int idCounter = 0;
+    int bikeID;
+    private static int idCounter = 1;
     String color;
     String state;
 
-    Bike( String color, String state, int bikeID){
-        this.bikeID = bikeID + idCounter++;
+    Bike( String color, String state){
+        this.bikeID =  idCounter++;
         this.color = color;
         this.state = state;
 
